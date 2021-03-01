@@ -1,41 +1,9 @@
 import React, { Component } from 'react';
+import TOC from "./components/TOC";
+import Content from "./components/Content";
+import Subject from "./components/Subject";
 import './App.css';
 
-class Subject extends Component{
-  render(){
-    return(
-      <header>
-            <h1>WEB</h1>
-            world wide web!
-      </header>
-    );
-  }
-}
-
-class TOC extends Component{
-  render(){
-    return(
-      <nav>
-        <ul>
-            <li><a href="1.html">HTML</a></li>
-            <li><a href="2.html">CSS</a></li>
-            <li><a href="3.html">JAVASCRIPT</a></li>
-        </ul>
-      </nav>
-    );
-  }
-}
-
-class Content extends Component{
-  render(){
-    return(
-      <article>
-          <h2>HTML</h2>
-          HTML is Hyper Text Markup Language.
-      </article>
-    );
-  }
-}
 
 //컴포넌트를 만드는 코드 템플릿 
 class App extends Component {
@@ -43,9 +11,10 @@ class App extends Component {
     return (
 
       <div className="App">
-        <Subject></Subject>
+        <Subject title="web" sub="world wide web!"></Subject>
+        <Subject title="React" sub="For UI"></Subject>
         <TOC></TOC>
-        <Content></Content>  
+        <Content title="HTML" desc="HTML is Hyper Text Markup Language."></Content>  
       </div>
       
     );
