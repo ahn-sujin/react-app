@@ -11,7 +11,12 @@ class App extends Component {
   constructor(props){
     super(props);
     this.state = {
-      Subject:{title:'WEB', sub:'world wide web!'}
+      subject:{title:'WEB', sub:'world wide web!'},
+      contents:[
+        {id:1, title:'HTML', desc:'HTML is Hyper Text Markup Language.'},
+        {id:2, title:'CSS', desc:'CSS id for design'},
+        {id:3, title:'JavaScript', desc:'JavaScript id for interactive'}
+      ]
     }
   }
 
@@ -20,10 +25,10 @@ class App extends Component {
 
       <div className="App">
         <Subject 
-          title={this.state.Subject.title} 
-          sub={this.state.Subject.sub}>
+          title={this.state.subject.title} 
+          sub={this.state.subject.sub}>
         </Subject>
-        <TOC></TOC>
+        <TOC data={this.state.contents}></TOC>
         <Content title="HTML" desc="HTML is Hyper Text Markup Language."></Content>  
       </div>
       
