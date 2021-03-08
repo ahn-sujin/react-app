@@ -11,7 +11,9 @@ class App extends Component {
   constructor(props){
     super(props);
     this.state = {
+      mode:'read',
       subject:{title:'WEB', sub:'world wide web!'},
+      welcom:{title:'welcome', desc:'Hello React!!'},
       contents:[
         {id:1, title:'HTML', desc:'HTML is Hyper Text Markup Language.'},
         {id:2, title:'CSS', desc:'CSS id for design'},
@@ -21,15 +23,34 @@ class App extends Component {
   }
 
   render() {
+    var _title, _desc = null;
+    if(this.state.mode === 'welcome'){
+      _title = this.state.welcom.title;
+      _desc = this.state.welcom.desc;
+    } else if(this.state.mode === 'read'){
+      _title = this.state.contents[0].title;
+      _desc = this.state.contents[0].desc;
+    }
     return (
 
       <div className="App">
-        <Subject 
+        {/* <Subject 
           title={this.state.subject.title} 
           sub={this.state.subject.sub}>
-        </Subject>
+        </Subject> */}
+        <header>
+              <h1 a href="/" onClick={function(e){
+                console.log(e);
+                e.preventDefault();
+                // this.state.mode = 'welcome';
+                this.setState({
+                  mode:'welcome'
+                });
+              }.bind(this)}>{this.state.subject.title} </h1>
+              {this.state.subject.sub}
+        </header>
         <TOC data={this.state.contents}></TOC>
-        <Content title="HTML" desc="HTML is Hyper Text Markup Language."></Content>  
+        <Content title={_title} desc={_desc}></Content>  
       </div>
       
     );
