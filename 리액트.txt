@@ -201,6 +201,22 @@ this.state.mode = 'welcome';  사용 불가 ---> 리액트가 변경 값을 인�
 - constructor함수에서 변경 할 때는 
 this.state.mode = 'welcome';  방법사용 가능 
 
+17-1. 컴포넌트 이벤트 만들기 
+-컴포넌트의 이벤트 만들때 onChangePage 생성 
+: 컴포넌트 안에서 링크 클릭했을 때 이벤트에 설치한 함수를 호출 
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
